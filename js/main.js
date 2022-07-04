@@ -254,7 +254,19 @@ $('form').on('submit', function() {
     var spBuffs = parseFloat($('#SPBuffs').val())/100 || 0;
     var esAdvantage = parseFloat($('#ESAdvantage').val()) || 0;
     var npspBuffs = parseFloat($('#NPSPBuffs').val())/100 || 0;
-
+	
+	if($('#oberon').is(':checked')){
+		npBuffs = npBuffs * 2;
+	}
+	
+	cardBuffs = Math.min(cardBuffs, 5)
+    cardDebuffs = Math.min(cardBuffs, 1)
+    attackBuffs = Math.min(cardBuffs, 5)
+    defenseDebuffs = Math.min(cardBuffs, 1)
+    npBuffs = Math.min(cardBuffs, 5)
+	
+	
+	
     $('#servantClass').on('change',function(){
         servantClass = $('#servantClass').val();
     });
